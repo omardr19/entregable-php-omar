@@ -20,7 +20,7 @@ interface Props {
 
 function CarritoSidebar({ abierto, cerrar }: Props) {
 
-  const { carrito, eliminar, cambiarCantidad } = useCart();
+  const { carrito, eliminar, cambiarCantidad, limpiar } = useCart();
   const navigate = useNavigate();
 
   const usuario = localStorage.getItem("nombreUsuario");
@@ -137,9 +137,9 @@ function CarritoSidebar({ abierto, cerrar }: Props) {
       alert("Compra realizada correctamente ✅");
 
       // 🔹 Limpiar carrito
-      localStorage.removeItem("carrito");
+      limpiar(); // limpia estado y localStorage
+      cerrar();  // opcional: cerrar el sidebar después de comprar
 
-      window.location.reload();
 
     } catch (error) {
 

@@ -299,19 +299,25 @@ function AdminProductos() {
         </div>
 
         {/* 🔹 PREVIEW */}
-        {imagen && (
+        {imagen ? (
           <div className="preview-box">
-
-            <p>Vista previa</p>
-
+            <p>Vista previa (nueva)</p>
             <img
               src={URL.createObjectURL(imagen)}
               alt="preview"
               className="preview-img"
             />
-
           </div>
-        )}
+        ) : form.imagen ? (
+          <div className="preview-box">
+            <p>Imagen registrada</p>
+            <img
+              src={`http://localhost:3000/IMG/productos/${form.imagen}`}
+              alt={form.nombre}
+              className="preview-img"
+            />
+          </div>
+        ) : null}
 
         {/* 🔹 BOTONES */}
         <div className="buttons-admin">

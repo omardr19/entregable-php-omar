@@ -44,8 +44,13 @@ export const CartProvider = ({ children }: any) => {
     ));
   };
 
+  const limpiar = () => {
+    setCarrito([]);
+    localStorage.removeItem("carrito");
+  };
+
   return (
-    <CartContext.Provider value={{ carrito, agregar, eliminar, cambiarCantidad }}>
+    <CartContext.Provider value={{ carrito, agregar, eliminar, cambiarCantidad, limpiar }}>
       {children}
     </CartContext.Provider>
   );

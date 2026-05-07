@@ -39,10 +39,32 @@
 }
 
 .form-grid input,
-.form-grid select {
-  padding: 10px;
-  border-radius: 8px;
+.form-grid select,
+.form-grid textarea {
+  padding: 14px 12px;          /* más espacio interno */
+  border-radius: 10px;         /* bordes más suaves */
   border: 1px solid var(--border);
+  font-size: 15px;             /* texto más legible */
+  width: 100%;                 /* ocupar todo el ancho disponible */
+  box-sizing: border-box;      /* que padding no rompa el ancho */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* efecto al enfocar */
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 6px rgba(0, 200, 83, 0.3);
+  outline: none;
+}
+
+/* etiquetas */
+.input-box label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: var(--dark);
 }
 
 /* BOTONES */

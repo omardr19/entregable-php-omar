@@ -28,13 +28,15 @@ function AdminBoletas() {
   // 🔹 Cargar boletas
   const cargarBoletas = async () => {
     const res = await axios.get("http://localhost:3000/backend/boletas.php");
-    setBoletas(res.data);
+    console.log("Boletas:", res.data);
+    setBoletas(Array.isArray(res.data) ? res.data : []);
   };
 
   // 🔹 Cargar detalles
   const verDetalles = async (id: number) => {
     const res = await axios.get(`http://localhost:3000/backend/detallesBoleta.php?idBoleta=${id}`);
-    setDetalles(res.data);
+    console.log("Detalles:", res.data);
+    setDetalles(Array.isArray(res.data) ? res.data : []);
     setBoletaSeleccionada(id);
   };
 
