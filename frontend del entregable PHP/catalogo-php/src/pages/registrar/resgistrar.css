@@ -1,0 +1,38 @@
+.registro-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #4A90E2, #B0B0B0);
+}
+
+.registro-box {
+  background: #F5F5F5;
+  padding: 40px;
+  border-radius: 15px;
+  width: 320px;
+  text-align: center;
+}
+
+.registro-box input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.registro-box button {
+  width: 100%;
+  padding: 10px;
+  background: #00C853;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.registro-box span {
+  color: #00C853;
+  cursor: pointer;
+}

@@ -1,0 +1,92 @@
+/* fondo con degradado */
+.p_login {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #4A90E2, #B0B0B0); /* azul más claro → gris metálico claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* contenedor */
+.container_login {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* caja login */
+.login-box {
+    background: #F5F5F5; /* blanco humo */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    color: #121212; /* texto oscuro para contraste */
+}
+
+/* títulos */
+.login-box h2 {
+    margin-bottom: 10px;
+    color: #0A3D62; /* azul profundo */
+}
+
+.subtitle {
+    color: #4A4A4A; /* gris metálico oscuro */
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* inputs modernos */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid #B0B0B0; /* gris claro */
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    background: #FFFFFF; /* fondo claro */
+    color: #121212; /* texto oscuro */
+}
+
+.input-group label {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: #666;
+    font-size: 14px;
+    transition: 0.3s;
+    background: #F5F5F5;
+    padding: 0 5px;
+}
+
+/* animación label */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -8px;
+    font-size: 12px;
+    color: #00C853; /* verde eléctrico */
+}
+
+/* botón */
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #00C853, #4A90E2); /* verde eléctrico → azul claro */
+    border: none;
+    color: #FFFFFF;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #4A90E2, #00C853); /* invertido para efecto dinámico */
+}

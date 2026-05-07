@@ -1,0 +1,145 @@
+.swiper {
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+} /* TRACK */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+} /* SLIDE */
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 100%;
+}
+.producto {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #4a4a4a;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+.producto:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+.producto-info {
+  width: 40%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(165deg, #121212, #ff6f00);
+  color: white;
+  gap: 15px;
+} /* TITULO */
+.producto-info h3 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+} /* PRECIO MEJORADO */
+.precio {
+  background: white;
+  color: #00c853;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.producto-info button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.producto-info button:hover {
+  background: #333;
+}
+.producto-img {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f8f8;
+}
+.producto-img img {
+  width: 90%;
+  max-height: 200px;
+  object-fit: contain;
+  transition: 0.4s;
+}
+.producto:hover .producto-img img {
+  transform: scale(1.05);
+} /* FLECHAS (centradas sin alterar diseño) */
+.carousel-prev,
+.carousel-next {
+  position: absolute; /* CENTRADO REAL */
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: 40px;
+  background: #333;
+  color: white;
+  border: none;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} /* POSICIÓN */
+.carousel-prev {
+  left: 10px;
+}
+.carousel-next {
+  right: 10px;
+} /* VIÑETAS (centradas correctamente sin cambiar estilo) */
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+} /* DOTS */
+.carousel-dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+} /* DOT ACTIVO */
+.carousel-dots span.active {
+  background: red;
+}
+
+.producto {
+  height: 90%; /* Para que ocupe todo el slide de Swiper */
+  margin: 0 auto;
+}
