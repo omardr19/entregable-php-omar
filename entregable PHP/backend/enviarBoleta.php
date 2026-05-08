@@ -1,7 +1,14 @@
 <?php
-header("Access-Control-Allow-Origin: http://localhost:5173");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
+$allowed_origins = [
+    "http://localhost:5173",
+    "https://enchanting-horse-1a7950.netlify.app"
+];
+
+if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
+    header("Access-Control-Allow-Origin: " . $_SERVER['HTTP_ORIGIN']);
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type, Authorization");
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     http_response_code(200);
@@ -128,14 +135,14 @@ try {
     $mail = new PHPMailer(true);
 
     $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
+    $mail->Host = getenv('SMTP_HOST'); 
     $mail->SMTPAuth = true;
-    $mail->Username = '';
-    $mail->Password = ''; 
+    $mail->Username = getenv('SMTP_USER');
+    $mail->Password = getenv('SMTP_PASS'); 
     $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
+    $mail->Port = getenv('SMTP_PORT');
 
-    $mail->setFrom('', 'Tienda Tech');
+    $mail->setFrom(getenv('SMTP_USER'), 'Tienda Tech');
     $mail->addAddress($boleta['correo'], $boleta['nombres']);
 
     $mail->isHTML(true);
