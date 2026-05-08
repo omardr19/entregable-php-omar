@@ -28,7 +28,7 @@ function Inicio() {
       try {
 
         const response = await axios.get(
-          "http://localhost:3000/backend/productos.php"
+          "https://entregable-php.onrender.com/productos.php"
         );
 
         setProductos(response.data);
@@ -110,7 +110,7 @@ function Inicio() {
                       <div className="card" key={producto.id}>
 
                         <img
-                          src={`http://localhost:3000/IMG/productos/${producto.imagen}`}
+                          src={`https://entregable-php.onrender.com/IMG/productos/${producto.imagen}`}
                           alt={producto.nombre}
                         />
 

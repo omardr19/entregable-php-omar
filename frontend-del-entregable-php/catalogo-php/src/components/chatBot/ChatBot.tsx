@@ -81,7 +81,7 @@ function ChatBot() {
       ) {
 
         const res = await axios.post(
-          "http://localhost:3000/backend/chatbot.php",
+          "https://entregable-php.onrender.com/chatbot.php",
           {
             mensaje: textoUsuario
           }
@@ -162,7 +162,7 @@ function ChatBot() {
     try {
 
         const res = await axios.post(
-        "http://localhost:3000/backend/chatbot.php",
+        "https://entregable-php.onrender.com/chatbot.php",
         {
             mensaje: texto
         }

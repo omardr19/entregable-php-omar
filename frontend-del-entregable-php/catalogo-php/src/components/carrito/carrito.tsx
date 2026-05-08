@@ -75,7 +75,7 @@ function CarritoSidebar({ abierto, cerrar }: Props) {
 
       // 🔹 1 Crear boleta
       const resBoleta = await fetch(
-        "http://localhost:3000/backend/crearBoleta.php",
+        "https://entregable-php.onrender.com/crearBoleta.php",
         {
           method: "POST",
           headers: {
@@ -100,7 +100,7 @@ function CarritoSidebar({ abierto, cerrar }: Props) {
 
       // 🔹 2 Insertar detalles
       const resDetalle = await fetch(
-        "http://localhost:3000/backend/agregarDetalleB.php",
+        "https://entregable-php.onrender.com/agregarDetalleB.php",
         {
           method: "POST",
           headers: {
@@ -122,7 +122,7 @@ function CarritoSidebar({ abierto, cerrar }: Props) {
 
       // 🔹 3 Enviar correo
       await fetch(
-        "http://localhost:3000/backend/enviarBoleta.php",
+        "https://entregable-php.onrender.com/enviarBoleta.php",
         {
           method: "POST",
           headers: {
@@ -195,7 +195,7 @@ function CarritoSidebar({ abierto, cerrar }: Props) {
               <div key={p.id} className="item">
 
                 <img
-                  src={`http://localhost:3000/IMG/productos/${p.imagen}`}
+                  src={`https://entregable-php.onrender.com/IMG/productos/${p.imagen}`}
                   alt={p.nombre}
                 />
 

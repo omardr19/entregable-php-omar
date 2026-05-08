@@ -30,12 +30,12 @@ function Catalogo() {
             const fetchData = async () => {
                 try {
                     console.log("Intentando cargar productos...");
-                    const resProd = await axios.get("http://localhost:3000/backend/productos.php");
+                    const resProd = await axios.get("https://entregable-php.onrender.com/productos.php");
                     setProductos(resProd.data);
                     console.log("Productos cargados:", resProd.data);
 
                     console.log("Intentando cargar categorías...");
-                    const resCat = await axios.get("http://localhost:3000/backend/categoria.php");
+                    const resCat = await axios.get("https://entregable-php.onrender.com/categoria.php");
                     setCategorias(resCat.data);
                     console.log("Categorías cargadas:", resCat.data);
 
@@ -109,7 +109,7 @@ function Catalogo() {
 
                         <div className="image-container">
                         <span className="category-tag">{prod.categoria_nombre}</span>
-                        <img src={`http://localhost:3000/IMG/productos/${prod.imagen}`} alt={prod.nombre} />
+                        <img src={`https://entregable-php.onrender.com/IMG/productos/${prod.imagen}`} alt={prod.nombre} />
                         </div>
 
                         <div className="product-details">

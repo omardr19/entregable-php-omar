@@ -28,7 +28,7 @@ function CarruselP() {
       try {
 
         const response = await axios.get(
-          "http://localhost:3000/backend/productos.php"
+          "https://entregable-php.onrender.com/productos.php"
         );
 
         // 🔹 Tomamos algunos productos para el carrusel
@@ -87,7 +87,7 @@ function CarruselP() {
               <div className="producto-img">
 
                 <img
-                  src={`http://localhost:3000/IMG/productos/${item.imagen}`}
+                  src={`https://entregable-php.onrender.com/IMG/productos/${item.imagen}`}
                   alt={item.nombre}
                 />
 
