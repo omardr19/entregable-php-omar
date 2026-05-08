@@ -1,0 +1,157 @@
+
+.qs-hero {
+    width: 100%;
+    height: 420px;
+    background-image:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.65)),
+        url('/IMG/banner_tecnologia.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qs-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qs-hero-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.qs-hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.qs-hero-content p {
+    font-size: 1.2rem;
+    opacity: .95;
+}
+
+.qs-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 70px 40px;
+}
+
+.qs-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.qs-texto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #111827;
+}
+
+.qs-texto p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #4b5563;
+    margin-bottom: 20px;
+}
+
+.tag {
+    display: inline-block;
+    background: #dbeafe;
+    color: #2563eb;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.qs-img-box img {
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.18);
+}
+
+.qs-valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.valor-card {
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    text-align: center;
+    transition: .3s;
+}
+
+.valor-card:hover {
+    transform: translateY(-8px);
+}
+
+.icono {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.valor-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.valor-card p {
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+.qs-mision-vision {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+}
+
+.mv-card {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(37,99,235,.25);
+}
+
+.mv-card h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.mv-card p {
+    line-height: 1.8;
+    opacity: .95;
+}
+
+@media (max-width: 900px) {
+
+    .qs-card {
+        grid-template-columns: 1fr;
+    }
+
+    .qs-hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .qs-container {
+        padding: 50px 20px;
+    }
+}

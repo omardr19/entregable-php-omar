@@ -1,92 +1,237 @@
-/* fondo con degradado */
 .p_login {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    height: 100vh;
-    background: linear-gradient(135deg, #4A90E2, #B0B0B0); /* azul más claro → gris metálico claro */
+
+    min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)),
+        url('/IMG/banner_tecnologia.jpg');
+
+    background-size: cover;
+    background-position: center;
 }
 
 /* contenedor */
 .container_login {
     width: 100%;
-    max-width: 400px;
+    max-width: 430px;
 }
 
 /* caja login */
 .login-box {
-    background: #F5F5F5; /* blanco humo */
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    background: rgba(255,255,255,0.96);
+
+    backdrop-filter: blur(12px);
+
+    padding: 45px 40px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.20);
+
     text-align: center;
-    color: #121212; /* texto oscuro para contraste */
+
+    animation: aparecer .5s ease;
 }
 
 /* títulos */
 .login-box h2 {
     margin-bottom: 10px;
-    color: #0A3D62; /* azul profundo */
+    color: #111827;
+    font-size: 2.2rem;
 }
 
 .subtitle {
-    color: #4A4A4A; /* gris metálico oscuro */
-    font-size: 14px;
-    margin-bottom: 25px;
+    color: #6b7280;
+    font-size: 15px;
+    margin-bottom: 35px;
 }
 
-/* inputs modernos */
+/* inputs */
 .input-group {
     position: relative;
     margin-bottom: 25px;
 }
 
 .input-group input {
+
     width: 100%;
-    padding: 12px 10px;
-    border: 1px solid #B0B0B0; /* gris claro */
-    border-radius: 8px;
+
+    padding: 15px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 14px;
+
     outline: none;
-    font-size: 14px;
-    background: #FFFFFF; /* fondo claro */
-    color: #121212; /* texto oscuro */
+
+    font-size: 15px;
+
+    background: #f9fafb;
+
+    color: #111827;
+
+    transition: .3s;
+}
+
+.input-group input:focus {
+
+    border-color: #2563eb;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,.15);
 }
 
 .input-group label {
+
     position: absolute;
-    left: 10px;
-    top: 12px;
-    color: #666;
+
+    left: 14px;
+    top: 15px;
+
+    color: #6b7280;
+
     font-size: 14px;
-    transition: 0.3s;
-    background: #F5F5F5;
-    padding: 0 5px;
+
+    transition: .3s;
+
+    background: transparent;
+
+    pointer-events: none;
 }
 
 /* animación label */
 .input-group input:focus + label,
 .input-group input:valid + label {
-    top: -8px;
+
+    top: -9px;
+
+    left: 10px;
+
     font-size: 12px;
-    color: #00C853; /* verde eléctrico */
+
+    color: #2563eb;
+
+    background: white;
+
+    padding: 0 8px;
+
+    border-radius: 10px;
 }
 
 /* botón */
 .login-box button {
+
     width: 100%;
-    padding: 12px;
-    background: linear-gradient(135deg, #00C853, #4A90E2); /* verde eléctrico → azul claro */
+
+    padding: 15px;
+
     border: none;
-    color: #FFFFFF;
-    border-radius: 8px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(135deg, #2563eb, #1d4ed8);
+
+    color: white;
+
     font-size: 16px;
+
+    font-weight: 600;
+
     cursor: pointer;
-    transition: 0.3s;
+
+    transition: .3s;
+
+    margin-top: 10px;
 }
 
 .login-box button:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #4A90E2, #00C853); /* invertido para efecto dinámico */
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,.30);
+}
+
+/* error */
+.error-login {
+
+    background: rgba(239,68,68,.10);
+
+    border: 1px solid rgba(239,68,68,.25);
+
+    color: #dc2626;
+
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+/* texto inferior */
+.login-box p {
+
+    margin-top: 25px;
+
+    color: #6b7280;
+}
+
+.login-box span {
+
+    color: #2563eb;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.login-box span:hover {
+    color: #1d4ed8;
+}
+
+/* animación */
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* responsive */
+@media (max-width: 500px) {
+
+    .login-box {
+        padding: 35px 25px;
+    }
+
+    .login-box h2 {
+        font-size: 1.9rem;
+    }
 }

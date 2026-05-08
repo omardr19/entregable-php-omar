@@ -44,8 +44,7 @@ function Barra_navegacion() {
                 <div className="nav-links">
                     <Link to="/inicio">Inicio</Link>
                     <Link to="/catalogo">Productos</Link>
-                    <Link to="#contacto">Contacto</Link>
-                    <a href="#nosotros">Quiénes somos</a>
+                    <Link to="/quienesSomos">¿Quienes Somos?</Link>
                 </div>
 
                 <div className="nav-icons">

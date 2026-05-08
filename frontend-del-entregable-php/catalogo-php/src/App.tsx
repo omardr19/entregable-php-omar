@@ -5,6 +5,7 @@ import Catalogo from './pages/catalogo/Catalogo';
 import AdminProductos from './pages/adminProductos/AdminProductos';
 import AdminBoletas from './pages/adminBoletas/AdminBoletas';
 import Registrar from './pages/registrar/Registrar';
+import QuienesSomos from './pages/somos/somos';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/admin" element={<AdminProductos />} />
         <Route path="/admin/boletas" element={<AdminBoletas />} />  
         <Route path="/registrar" element={<Registrar />} />
+        <Route path="/quienesSomos" element={<QuienesSomos />} />
 
         {/* Ruta de captura por si escribes mal la URL */}
         <Route path="*" element={<div>404 - No encontrado</div>} />

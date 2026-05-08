@@ -1,38 +1,138 @@
 .registro-container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #4A90E2, #B0B0B0);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+
+    background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)),
+        url('/IMG/banner_tecnologia.jpg');
+
+    background-size: cover;
+    background-position: center;
 }
 
 .registro-box {
-  background: #F5F5F5;
-  padding: 40px;
-  border-radius: 15px;
-  width: 320px;
-  text-align: center;
+    width: 100%;
+    max-width: 430px;
+
+    background: rgba(255,255,255,0.96);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 28px;
+
+    padding: 45px 40px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.20);
+
+    animation: aparecer .5s ease;
+}
+
+.registro-box h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+.registro-box form {
+    margin-top: 30px;
 }
 
 .registro-box input {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+    width: 100%;
+    padding: 14px 16px;
+
+    margin-bottom: 18px;
+
+    border-radius: 14px;
+    border: 1px solid #d1d5db;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: .3s;
+    background: #f9fafb;
+}
+
+.registro-box input:focus {
+    border-color: #2563eb;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,.15);
 }
 
 .registro-box button {
-  width: 100%;
-  padding: 10px;
-  background: #00C853;
-  border: none;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
+    width: 100%;
+    padding: 15px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    margin-top: 10px;
+}
+
+.registro-box button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,.30);
+}
+
+.registro-box p {
+    margin-top: 25px;
+    text-align: center;
+    color: #6b7280;
 }
 
 .registro-box span {
-  color: #00C853;
-  cursor: pointer;
+    color: #2563eb;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.registro-box span:hover {
+    color: #1d4ed8;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .registro-box {
+        padding: 35px 25px;
+    }
+
+    .registro-box h2 {
+        font-size: 1.8rem;
+    }
 }

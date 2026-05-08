@@ -7,11 +7,13 @@ function Login() {
     
     const [usuario, setUsuario] = useState("");
     const [password, setPassword] = useState("");
+    const [errorLogin, setErrorLogin] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault(); 
 
+        setErrorLogin("");
         try {
             const response = await axios.post("https://entregable-php.onrender.com/login.php", {
                 usuario: usuario,
@@ -33,13 +35,13 @@ function Login() {
                 // Ya puedes habilitar el navigate con confianza
                 navigate('/inicio'); 
             } else {
-                alert(response.data.mensaje);
+                setErrorLogin("Credenciales inválidas");
             }
 
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 console.error("Error detallado:", error.response?.data);
-                alert("Error de conexión con el servidor");
+                setErrorLogin("Credenciales inválidas");
             }
         }
     };
@@ -63,6 +65,11 @@ function Login() {
                         </div>
 
                         <button type="submit">Ingresar</button>
+                        {errorLogin && (
+                            <p className="error-login">
+                                {errorLogin}
+                            </p>
+                        )}
                     </form>
                     <p>
                         ¿No tienes cuenta? 
