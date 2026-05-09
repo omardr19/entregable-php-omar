@@ -17,7 +17,7 @@ function AdminClientes() {
   const cargarClientes = async () => {
 
     const res = await axios.get(
-      "https://entregable-php.onrender.com/clientes.php"
+      "https://backend-omar-php.onrender.com/clientes.php"
     );
 
     setClientes(res.data);

@@ -45,11 +45,11 @@ function AdminProductos() {
     try {
 
       const resProd = await axios.get(
-        "https://entregable-php.onrender.com/productos.php"
+        "https://backend-omar-php.onrender.com/productos.php"
       );
 
       const resCat = await axios.get(
-        "https://entregable-php.onrender.com/categoria.php"
+        "https://backend-omar-php.onrender.com/categoria.php"
       );
 
       setProductos(resProd.data);
@@ -105,7 +105,7 @@ function AdminProductos() {
       if (editando) {
 
         await axios.post(
-          "https://entregable-php.onrender.com/editarP.php",
+          "https://backend-omar-php.onrender.com/editarP.php",
           formData,
           {
             headers: {
@@ -119,7 +119,7 @@ function AdminProductos() {
       } else {
 
         await axios.post(
-          "https://entregable-php.onrender.com/agregarP.php",
+          "https://backend-omar-php.onrender.com/agregarP.php",
           formData,
           {
             headers: {
@@ -153,7 +153,7 @@ function AdminProductos() {
     try {
 
       await axios.post(
-        "https://entregable-php.onrender.com/eliminarP.php",
+        "https://backend-omar-php.onrender.com/eliminarP.php",
         { id }
       );
 
@@ -312,7 +312,7 @@ function AdminProductos() {
           <div className="preview-box">
             <p>Imagen registrada</p>
             <img
-              src={`https://entregable-php.onrender.com/IMG/productos/${form.imagen}`}
+              src={`https://backend-omar-php.onrender.com/IMG/productos/${form.imagen}`}
               alt={form.nombre}
               className="preview-img"
             />

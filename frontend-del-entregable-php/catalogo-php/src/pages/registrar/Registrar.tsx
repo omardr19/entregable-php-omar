@@ -28,7 +28,7 @@ function Registrar() {
     try {
 
       const response = await axios.post(
-        "https://entregable-php.onrender.com/agregarUsuario.php",
+        "https://backend-omar-php.onrender.com/agregarUsuario.php",
         {
           ...form,
           tipo: "cliente" // 👈 FORZAMOS CLIENTE

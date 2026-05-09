@@ -27,14 +27,14 @@ function AdminBoletas() {
 
   // 🔹 Cargar boletas
   const cargarBoletas = async () => {
-    const res = await axios.get("https://entregable-php.onrender.com/boletas.php");
+    const res = await axios.get("https://backend-omar-php.onrender.com/boletas.php");
     console.log("Boletas:", res.data);
     setBoletas(Array.isArray(res.data) ? res.data : []);
   };
 
   // 🔹 Cargar detalles
   const verDetalles = async (id: number) => {
-    const res = await axios.get(`https://entregable-php.onrender.com/detallesBoleta.php?idBoleta=${id}`);
+    const res = await axios.get(`https://backend-omar-php.onrender.com/detallesBoleta.php?idBoleta=${id}`);
     console.log("Detalles:", res.data);
     setDetalles(Array.isArray(res.data) ? res.data : []);
     setBoletaSeleccionada(id);

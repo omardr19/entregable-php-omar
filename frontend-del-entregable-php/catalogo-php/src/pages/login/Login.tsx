@@ -15,7 +15,7 @@ function Login() {
 
         setErrorLogin("");
         try {
-            const response = await axios.post("https://entregable-php.onrender.com/login.php", {
+            const response = await axios.post("https://backend-omar-php.onrender.com/login.php", {
                 usuario: usuario,
                 contrasena: password,
             });
