@@ -1,7 +1,6 @@
 .swiper {
   width: 100%;
   height: 350px;
-  border-radius: 20px;
 }
 
 .carousel {
@@ -9,11 +8,16 @@
   width: 100%;
   height: 320px;
   overflow: hidden;
-} /* TRACK */
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* TRACK Y SLIDES */
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease;
-} /* SLIDE */
+  height: 100%;
+}
+
 .slide {
   min-width: 100%;
   height: 100%;
@@ -21,26 +25,27 @@
   justify-content: center;
   align-items: center;
 }
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-  height: 100%;
-}
+
+/* TARJETA DEL PRODUCTO (Estilo Falabella) */
 .producto {
   width: 90%;
-  height: 80%;
+  height: 90%;
+  margin: 0 auto;
   display: flex;
-  background: white;
-  border-radius: 20px;
-  border: 1px solid #4a4a4a;
+  background: #ffffff; /* Fondo blanco puro */
+  border-radius: 8px; /* Curvas más modernas y sutiles */
+  border: 1px solid #eaeaea; /* Borde gris ultra claro */
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); /* Sombra muy suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .producto:hover {
-  transform: scale(1.01);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px); /* Se eleva suavemente, sin hacer zoom a toda la tarjeta */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
+
+/* INFORMACIÓN DEL PRODUCTO */
 .producto-info {
   width: 40%;
   padding: 30px;
@@ -48,98 +53,126 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background: linear-gradient(165deg, #121212, #ff6f00);
-  color: white;
-  gap: 15px;
-} /* TITULO */
+  background: #ffffff; /* Adiós al degradado oscuro */
+  color: #111111;
+  gap: 12px;
+}
+
+/* TITULO */
 .producto-info h3 {
   margin: 0;
-  font-size: 18px;
-  line-height: 1.4;
-  font-weight: 600;
-} /* PRECIO MEJORADO */
-.precio {
-  background: white;
-  color: #00c853;
-  font-weight: bold;
-  font-size: 20px;
-  padding: 6px 14px;
-  border-radius: 8px;
-  border: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 400; /* Letra ligera para no saturar */
+  color: #4a4a4a;
 }
+
+/* PRECIO MEJORADO */
+.precio {
+  background: transparent;
+  color: #111111; /* Precio en negro sólido y grande */
+  font-weight: 700;
+  font-size: 26px;
+  padding: 0;
+  border: none;
+  box-shadow: none; /* Quitamos la "caja" alrededor del precio */
+}
+
+/* BOTÓN DE ACCIÓN (Verde Lima) */
 .producto-info button {
   margin-top: 10px;
-  padding: 10px 15px;
+  padding: 12px 20px;
+  width: 100%;
   border: none;
-  background: black;
-  color: white;
-  border-radius: 8px;
+  background: #bad102; /* El color característico */
+  color: #111111;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 20px; /* Bordes en píldora */
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.2s ease;
 }
+
 .producto-info button:hover {
-  background: #333;
+  background: #a8bc00;
 }
+
+/* ÁREA DE LA IMAGEN */
 .producto-img {
   width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f8f8f8;
+  background: #ffffff;
 }
+
 .producto-img img {
   width: 90%;
   max-height: 200px;
   object-fit: contain;
-  transition: 0.4s;
+  transition: transform 0.4s ease;
 }
+
 .producto:hover .producto-img img {
-  transform: scale(1.05);
-} /* FLECHAS (centradas sin alterar diseño) */
+  transform: scale(1.04); /* Zoom muy leve solo a la foto */
+}
+
+/* FLECHAS DE NAVEGACIÓN */
 .carousel-prev,
 .carousel-next {
-  position: absolute; /* CENTRADO REAL */
+  position: absolute;
   top: 0;
   bottom: 0;
   margin: auto 0;
   height: 40px;
-  background: #333;
-  color: white;
-  border: none;
   width: 40px;
+  background: #ffffff; /* Flechas blancas */
+  color: #111111; /* Icono oscuro */
+  border: 1px solid #eaeaea;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-} /* POSICIÓN */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: #111111;
+  color: #ffffff;
+}
+
 .carousel-prev {
   left: 10px;
 }
 .carousel-next {
   right: 10px;
-} /* VIÑETAS (centradas correctamente sin cambiar estilo) */
+}
+
+/* VIÑETAS (Dots) */
 .carousel-dots {
   position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-} /* DOTS */
-.carousel-dots span {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background: #ccc;
-  margin: 5px;
-  border-radius: 50%;
-  cursor: pointer;
-} /* DOT ACTIVO */
-.carousel-dots span.active {
-  background: red;
+  z-index: 10;
 }
 
-.producto {
-  height: 90%; /* Para que ocupe todo el slide de Swiper */
-  margin: 0 auto;
+.carousel-dots span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #d1d5db; /* Gris muy clarito para los inactivos */
+  margin: 0 4px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dots span.active {
+  background: #bad102; /* Punto activo en verde lima */
+  transform: scale(1.2); /* Crece un poquito para destacar */
 }

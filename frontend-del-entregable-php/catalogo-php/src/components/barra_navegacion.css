@@ -1,93 +1,148 @@
+:root {
+  --nav-bg: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --accent-line: #000000;
+  --border-color: #f3f4f6;
+}
+
 .navbar {
   display: flex;
   align-items: center;
-  background: linear-gradient(175deg, #014b20, #00c853);
-  padding: 10px 30px;
-} /* LOGO */
-.logo img {
-  height: 4rem;
-} /* LINKS */
-.nav-links {
-  display: flex;
-  gap: 18px;
-  margin-left: 30px;
-  flex: 1; /* empuja iconos a la derecha */
+  background: var(--nav-bg);
+  padding: 15px 40px;
+  border-bottom: 1px solid var(--border-color); /* Línea sutil en lugar de degradado */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
+
+/* LOGO */
+.logo img {
+  height: 2.5rem; /* Tamaño más contenido y elegante */
+  filter: grayscale(100%); /* Opcional: logo en BN para máximo minimalismo */
   transition: 0.3s;
 }
+
+.logo img:hover {
+  filter: grayscale(0%);
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 32px; /* Mayor espaciado entre items */
+  margin-left: 50px;
+  flex: 1;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
 .nav-links a:hover {
-  color: #667eea;
-} /* CONTENEDOR DE ICONOS */
+  color: var(--text-main);
+}
+
+/* CONTENEDOR DE ICONOS */
 .nav-icons {
   display: flex;
-  gap: 20px;
-} /* ICONOS (carrito + login) */
+  gap: 15px;
+  align-items: center;
+}
+
+/* ICONOS SIMPLIFICADOS */
 .admin_btn a,
 .carrito_btn a,
 .inicio_sesion a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  overflow: hidden;
-  transition: 0.3s;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px; /* Cambiado de círculo a cuadrado sutil */
+  background: transparent;
+  transition: background 0.2s;
 }
+
 .admin_btn img,
 .carrito_btn img,
 .inicio_sesion img {
-  width: 70%;
-  height: 70%;
-  object-fit: contain;
-} /* HOVER */
+  width: 22px;
+  height: 22px;
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+/* HOVER ICONOS */
 .admin_btn a:hover,
 .carrito_btn a:hover,
 .inicio_sesion a:hover {
-  background: #667eea;
-  transform: scale(1.1);
+  background: var(--border-color);
+  transform: none; /* Sin saltos ni escalas */
 }
 
+.admin_btn a:hover img,
+.carrito_btn a:hover img,
+.inicio_sesion a:hover img {
+  opacity: 1;
+}
+
+/* PERFIL DE USUARIO */
 .user-menu {
   position: relative;
-  cursor: pointer;
+  margin-left: 10px;
 }
 
 .user-menu img {
-  width: 45px;
-  height: 45px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  border: 1px solid var(--border-color);
 }
 
-/* DROPDOWN */
+/* DROPDOWN MINIMALISTA */
 .dropdown {
   position: absolute;
-  top: 55px;
+  top: 48px;
   right: 0;
   background: white;
-  border-radius: 10px;
-  padding: 15px;
-  width: 150px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  text-align: center;
-  z-index: 1000;
+  border-radius: 12px;
+  padding: 12px;
+  width: 180px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Sombra muy suave */
+  text-align: left; /* Alineación natural */
 }
 
 .dropdown p {
-  margin: 0 0 10px 0;
-  font-weight: bold;
+  padding: 8px 12px;
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 8px;
 }
 
 .dropdown button {
   width: 100%;
-  padding: 8px;
-  background: red;
-  color: white;
+  padding: 10px;
+  background: transparent;
+  color: #ef4444; /* Rojo semántico suave */
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.dropdown button:hover {
+  background: #fef2f2;
 }
