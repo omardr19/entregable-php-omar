@@ -2,7 +2,7 @@
 
 $allowed_origins = [
     "http://localhost:5173",
-    "https://enchanting-horse-1a7950.netlify.app"
+    "https://benevolent-cactus-7bf28c.netlify.app"
 ];
 
 if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
