@@ -1,4 +1,16 @@
 <?php
+// PERMISOS CORS (Para que Netlify pueda entrar)
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+// Si es una petición de prueba (OPTIONS) de los navegadores, responder OK y salir
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
+// === TU CÓDIGO ORIGINAL INTACTO ===
 $host = getenv("DB_HOST");
 $db   = getenv("DB_NAME");
 $user = getenv("DB_USER");
