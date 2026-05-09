@@ -1,237 +1,170 @@
 .p_login {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
-
-    background:
-        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)),
-        url('/IMG/banner_tecnologia.jpg');
-
-    background-size: cover;
-    background-position: center;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #f9f9f9; /* Fondo súper limpio y neutro */
 }
 
 /* contenedor */
 .container_login {
-    width: 100%;
-    max-width: 430px;
+  width: 100%;
+  max-width: 400px; /* Un poco más estrecho para verse más refinado */
 }
 
 /* caja login */
 .login-box {
-
-    background: rgba(255,255,255,0.96);
-
-    backdrop-filter: blur(12px);
-
-    padding: 45px 40px;
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.20);
-
-    text-align: center;
-
-    animation: aparecer .5s ease;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #eaeaea; /* Borde gris casi invisible */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04); /* Sombra ultra suave */
+  text-align: center;
+  animation: aparecer .4s ease-out;
 }
 
 /* títulos */
 .login-box h2 {
-    margin-bottom: 10px;
-    color: #111827;
-    font-size: 2.2rem;
+  margin: 0 0 8px 0;
+  color: #111111;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px; /* Letras ligeramente más juntas (muy moderno) */
 }
 
 .subtitle {
-    color: #6b7280;
-    font-size: 15px;
-    margin-bottom: 35px;
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 32px;
 }
 
 /* inputs */
 .input-group {
-    position: relative;
-    margin-bottom: 25px;
+  position: relative;
+  margin-bottom: 24px;
 }
 
 .input-group input {
-
-    width: 100%;
-
-    padding: 15px 14px;
-
-    border: 1px solid #d1d5db;
-
-    border-radius: 14px;
-
-    outline: none;
-
-    font-size: 15px;
-
-    background: #f9fafb;
-
-    color: #111827;
-
-    transition: .3s;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px; /* Curvas más sutiles */
+  outline: none;
+  font-size: 15px;
+  background: #ffffff;
+  color: #111111;
+  transition: all 0.2s ease;
+  box-sizing: border-box; /* Evita que el input se salga de la caja */
 }
 
 .input-group input:focus {
-
-    border-color: #2563eb;
-
-    background: white;
-
-    box-shadow:
-        0 0 0 4px rgba(37,99,235,.15);
+  border-color: #111111; /* Enfoque en negro sólido, muy elegante */
+  /* Eliminamos el box-shadow azul brillante */
 }
 
 .input-group label {
-
-    position: absolute;
-
-    left: 14px;
-    top: 15px;
-
-    color: #6b7280;
-
-    font-size: 14px;
-
-    transition: .3s;
-
-    background: transparent;
-
-    pointer-events: none;
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  color: #888888;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  background: transparent;
+  pointer-events: none;
 }
 
 /* animación label */
 .input-group input:focus + label,
 .input-group input:valid + label {
-
-    top: -9px;
-
-    left: 10px;
-
-    font-size: 12px;
-
-    color: #2563eb;
-
-    background: white;
-
-    padding: 0 8px;
-
-    border-radius: 10px;
+  top: -8px;
+  left: 12px;
+  font-size: 12px;
+  color: #111111;
+  background: #ffffff;
+  padding: 0 4px;
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 /* botón */
 .login-box button {
-
-    width: 100%;
-
-    padding: 15px;
-
-    border: none;
-
-    border-radius: 14px;
-
-    background:
-        linear-gradient(135deg, #2563eb, #1d4ed8);
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: .3s;
-
-    margin-top: 10px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #111111; /* Negro sólido en lugar de degradado azul */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: 8px;
 }
 
 .login-box button:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 10px 25px rgba(37,99,235,.30);
+  background: #333333; /* Un gris oscuro al pasar el mouse */
+  /* Eliminamos el salto (translateY) para mantenerlo plano y serio */
 }
 
 /* error */
 .error-login {
-
-    background: rgba(239,68,68,.10);
-
-    border: 1px solid rgba(239,68,68,.25);
-
-    color: #dc2626;
-
-    margin-top: 18px;
-
-    padding: 12px;
-
-    border-radius: 12px;
-
-    text-align: center;
-
-    font-size: 14px;
-
-    font-weight: 500;
+  background: #fff0f0;
+  border: 1px solid #ffcccc;
+  color: #d8000c;
+  margin-top: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* texto inferior */
 .login-box p {
-
-    margin-top: 25px;
-
-    color: #6b7280;
+  margin-top: 24px;
+  color: #666666;
+  font-size: 14px;
 }
 
 .login-box span {
-
-    color: #2563eb;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: .3s;
+  color: #111111;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s;
 }
 
 .login-box span:hover {
-    color: #1d4ed8;
+  opacity: 0.7;
+  text-decoration: underline;
 }
 
 /* animación */
 @keyframes aparecer {
-
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Movimiento más corto y sutil */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* responsive */
 @media (max-width: 500px) {
-
-    .login-box {
-        padding: 35px 25px;
-    }
-
-    .login-box h2 {
-        font-size: 1.9rem;
-    }
+  .login-box {
+    padding: 32px 24px;
+    border-radius: 0; /* En móviles a veces es mejor que ocupe todo sin bordes redondos */
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  
+  .p_login {
+    background: #ffffff; /* Fondo blanco en móvil para que se integre perfecto */
+  }
 }
