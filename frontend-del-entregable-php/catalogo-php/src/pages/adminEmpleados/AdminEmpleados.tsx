@@ -38,11 +38,11 @@ function AdminEmpleados() {
      try {
 
       const res = await axios.get(
-        "https://entregable-php.onrender.com/empleados.php"
+        "https://backend-omar-php.onrender.com/empleados.php"
       );
 
       const resRoles = await axios.get(
-        "https://entregable-php.onrender.com/roles.php"
+        "https://backend-omar-php.onrender.com/roles.php"
       );
 
       setEmpleados(res.data);
@@ -95,7 +95,7 @@ await axios.post(
      } else {
 
         await axios.post(
-          "https://entregable-php.onrender.com/agregarUsuario.php",
+          "https://backend-omar-php.onrender.com/agregarUsuario.php",
           {
             ...form,
             tipo: "empleado"
@@ -138,7 +138,7 @@ await axios.post(
     try {
 
     await axios.post(
-        "https://entregable-php.onrender.com/eliminarEmpleado.php",
+        "https://backend-omar-php.onrender.com/eliminarEmpleado.php",
         { id }
       );
 
