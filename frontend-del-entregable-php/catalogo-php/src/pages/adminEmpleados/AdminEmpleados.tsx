@@ -8,12 +8,18 @@ interface Empleado {
   apellidos: string;
   nombre_usuario: string;
   correo: string;
-  rol: string;
+  rol: number;
+}
+
+interface Rol {
+  id: number;
+  nombre: string;
 }
 
 function AdminEmpleados() {
 
   const [empleados, setEmpleados] = useState<Empleado[]>([]);
+  const [roles, setRoles] = useState<Rol[]>([]);
 
   const [form, setForm] = useState({
     id: 0,
@@ -29,11 +35,25 @@ function AdminEmpleados() {
 
   const cargarEmpleados = async () => {
 
-    const res = await axios.get(
-      "https://backend-omar-php.onrender.com/empleados.php"
-    );
+     try {
+
+      const res = await axios.get(
+        "https://entregable-php.onrender.com/empleados.php"
+      );
+
+      const resRoles = await axios.get(
+        "https://entregable-php.onrender.com/roles.php"
+      );
+
+      setEmpleados(res.data);
+      setRoles(resRoles.data);
 
     setEmpleados(res.data);
+    } catch (error) {
+
+      console.error(error);
+
+    }
   };
 
   useEffect(() => {
@@ -41,7 +61,7 @@ function AdminEmpleados() {
   }, []);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
 
     setForm({
@@ -52,26 +72,48 @@ function AdminEmpleados() {
 
   const guardar = async () => {
 
-    if (editando) {
 
-      await axios.post(
-        "https://backend-omar-php.onrender.com/editarEmpleado.php",
-        form
-      );
 
-    } else {
 
-      await axios.post(
-        "https://backend-omar-php.onrender.com/agregarUsuario.php",
-        {
-          ...form,
-          tipo: "empleado"
-        }
-      );
+
+
+
+
+
+    try {
+
+     if (editando) {
+
+await axios.post(
+          "https://backend-omar-php.onrender.com/editarEmpleado.php",
+          form
+        );
+
+
+      alert("Empleado actualizado");
+
+     } else {
+
+        await axios.post(
+          "https://entregable-php.onrender.com/agregarUsuario.php",
+          {
+            ...form,
+            tipo: "empleado"
+          }
+        );
+
+        alert("Empleado registrado");
+      }
+
+      limpiar();
+      cargarEmpleados();
+
+    } catch (error) {
+
+      console.error(error);
+      alert("Error");
+
     }
-
-    limpiar();
-    cargarEmpleados();
   };
 
   const editar = (e: Empleado) => {
@@ -83,7 +125,7 @@ function AdminEmpleados() {
       usuario: e.nombre_usuario,
       correo: e.correo,
       contrasena: "",
-      rol: e.rol
+      rol: String(e.rol)
     });
 
     setEditando(true);
@@ -91,12 +133,22 @@ function AdminEmpleados() {
 
   const eliminar = async (id: number) => {
 
-    await axios.post(
-      "https://backend-omar-php.onrender.com/eliminarEmpleado.php",
-      { id }
-    );
 
-    cargarEmpleados();
+
+    try {
+
+    await axios.post(
+        "https://entregable-php.onrender.com/eliminarEmpleado.php",
+        { id }
+      );
+
+      cargarEmpleados();
+
+    } catch (error) {
+
+      console.error(error);
+
+    }
   };
 
   const limpiar = () => {
@@ -167,24 +219,57 @@ function AdminEmpleados() {
             />
           )}
 
-          <input
-            type="text"
+          <select
             name="rol"
-            placeholder="Rol"
             value={form.rol}
             onChange={handleChange}
-          />
+          >
+
+            <option value="">
+              Seleccionar Rol
+            </option>
+
+            {roles.map((r) => (
+
+              <option
+                key={r.id}
+                value={r.id}
+              >
+                {r.nombre}
+              </option>
+
+            ))}
+
+          </select>
+
 
         </div>
 
-        <button
-          className="btn btn-primary"
-          onClick={guardar}
-        >
-          {editando
-            ? "Actualizar Empleado"
-            : "Registrar Empleado"}
-        </button>
+        <div className="buttons-admin">
+
+          <button
+            className="btn btn-primary"
+            onClick={guardar}
+          >
+            {
+              editando
+                ? "Actualizar Empleado"
+                : "Registrar Empleado"
+            }
+          </button>
+
+          {editando && (
+
+            <button
+              className="btn btn-secondary"
+              onClick={limpiar}
+            >
+              Cancelar
+            </button>
+
+          )}
+
+        </div>
 
       </div>
 
@@ -197,7 +282,7 @@ function AdminEmpleados() {
               <th>Nombre</th>
               <th>Usuario</th>
               <th>Correo</th>
-              <th>Rol</th>
+              <th>Cargo</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -212,13 +297,21 @@ function AdminEmpleados() {
                   {e.nombres} {e.apellidos}
                 </td>
 
-                <td>{e.nombre_usuario}</td>
+                <td>
+                  {e.nombre_usuario}
+                </td>
 
-                <td>{e.correo}</td>
+                <td>
+                  {e.correo}
+                </td>
 
                 <td>
                   <span className="badge badge-blue">
-                    {e.rol}
+                    {
+                      roles.find(
+                        (r) => r.id === Number(e.rol)
+                      )?.nombre || "Sin rol"
+                    }
                   </span>
                 </td>
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import './adminproductos.css';
+import { Link } from "react-router-dom";
 
 interface Producto {
   id: number;
@@ -187,6 +188,23 @@ function AdminProductos() {
     <div className="admin-container">
 
       <div className="header-admin">
+
+      <div className="admin-links">
+
+          <Link to={"/admin"}>
+            📦 Productos
+          </Link>
+
+          <Link  to={"/Empleados"}>
+            👨‍💼 Empleados
+          </Link>
+
+          <Link to={"/clientes"}>
+            👥 Clientes
+          </Link>
+
+        </div>
+
         <h1>⚙️ Panel de Productos</h1>
         <p>Gestiona productos, stock, imágenes y estados</p>
       </div>

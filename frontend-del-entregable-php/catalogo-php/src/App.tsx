@@ -6,6 +6,8 @@ import AdminProductos from './pages/adminProductos/AdminProductos';
 import AdminBoletas from './pages/adminBoletas/AdminBoletas';
 import Registrar from './pages/registrar/Registrar';
 import QuienesSomos from './pages/somos/somos';
+import AdminEmpleados from './pages/adminEmpleados/AdminEmpleados';
+import AdminClientes from './pages/adminClientes/AdminClientes';
 
 function App() {
   return (
@@ -20,6 +22,9 @@ function App() {
         <Route path="/admin/boletas" element={<AdminBoletas />} />  
         <Route path="/registrar" element={<Registrar />} />
         <Route path="/quienesSomos" element={<QuienesSomos />} />
+        <Route path="/Empleados" element={<AdminEmpleados />} />
+        <Route path="/clientes" element={<AdminClientes />} />
+
 
         {/* Ruta de captura por si escribes mal la URL */}
         <Route path="*" element={<div>404 - No encontrado</div>} />
