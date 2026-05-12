@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import './adminempleados.css';
+import './AdminEmpleados.css';
 
 interface Cliente {
   id: number;
